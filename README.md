@@ -21,7 +21,7 @@ The server exposes REST data endpoints for all data operations, and serves front
 
 - Each user may access the public profile page of any other user, which includes a public Facebook image and the book list of the user.
 
-- An administrative user may modify book titles such as deleting or adding fields.
+- An administrative user may modify book titles, by various actions such as deleting or adding fields.
 
 - Angular is used to provide front end functionality.
 
@@ -57,7 +57,7 @@ Ignore folders and files as required.  Our .gitignore included the following:
 
 ## .env
 
-Create an .env file of the following form.  This will enable you to avoid posting information to a public resource
+Create an .env file at the top of the file structure of the following form.  This will enable you to avoid posting information to a public resource
 
 APP_ID=     *INSERT HERE - NO QUOTES*
 
@@ -71,6 +71,11 @@ NODE_ENV=development
 
 DB_URI=     *INSERT HERE - NO QUOTES*
 
+TEST_TOKEN=  *INSERT HERE - NO QUOTES - testing only *
+
+TEST_USERID=   *INSERT HERE - NO QUOTES  - testing only *
+
+ADMIN_TOKEN=   *INSERT HERE - NO QUOTES -  testing only *
 
 
 ## Tests
@@ -79,7 +84,7 @@ A. Test Preparations
 
 For the items listed below, it is recommended to create them before running tests.
 
-* process.env.DB_URI: A URI for a test mongoDB in which new entries, modifications, and queries are stored. You can use a local Mongo database or a remote database from MongoLab.
+* process.env.DB_URI: A URI for a test mongoDB in which new entries, modifications, and queries are stored. You can use a local Mongo database or a remote database, such as MongoLab.
 
 * process.env.TEST_TOKEN: A token that was issued for a valid Facebook test user. It is used and included in the request headers for restricted route access. Please create a test Facebook user, login to our app from your browser using this test Facebook, grab the token saved under localStorage.token while you are still logged in with the test Facebook in our app. Upon logout, the token will be cleared.
 
